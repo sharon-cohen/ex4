@@ -1,6 +1,7 @@
 *{  
     padding:0; 
     margin:0;
+    
   }
 
  .row{
@@ -33,7 +34,7 @@
     order: -1;
   }
   
-   footer, article, nav, aside {
+   footer, article, nav {
     padding: 1em;
  
   }
@@ -51,13 +52,13 @@
     background-color: greenyellow;
     
   }
-  article .main1{
-    height: 40vh;
-    background-color: pink;
- 
-  }
+  
+  
  .row .col-sm-3{
     background-color:green;
+    background-clip: content-box; /* <---- */
+    box-shadow: inset 0 0 0 10px lightGreen;
+    padding :5px;
     height: 30vh;
    
   }
@@ -66,4 +67,80 @@
     height: 30vh;
 
   }
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
   
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .campign-home ul{
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .campign-home ul li {
+    display: block;
+    flex: 0 1 auto; /* Default */
+    list-style-type: none;
+   
+    
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 5%;
+    position: fixed;
+    background-color: #111;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    font-size: 15px;
+    color: #818181;
+    display: block;
+  }
+  
+  
+  
+  main .sidebar{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  
+  
+
+  @media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
